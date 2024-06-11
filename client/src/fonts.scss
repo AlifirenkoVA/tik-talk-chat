@@ -2,6 +2,14 @@
     font-display: swap;
     font-family: 'JetBrains Mono';
     font-style: normal;
+    font-weight: 400;
+    src: url('/assets/fonts/JetBrainsMono-Thin.woff2') format('woff2');
+}
+
+@font-face {
+    font-display: swap;
+    font-family: 'JetBrains Mono';
+    font-style: normal;
     font-weight: 500;
     src: url('/assets/fonts/JetBrainsMono-Medium.woff2') format('woff2');
 }
@@ -20,12 +28,4 @@
     font-style: normal;
     font-weight: 800;
     src: url('/assets/fonts/JetBrainsMono-Bold.woff2') format('woff2');
-}
-
-@font-face {
-    font-display: swap;
-    font-family: 'JetBrains Mono';
-    font-style: normal;
-    font-weight: 400;
-    src: url('/assets/fonts/JetBrainsMono-Thin.woff2') format('woff2');
 }
