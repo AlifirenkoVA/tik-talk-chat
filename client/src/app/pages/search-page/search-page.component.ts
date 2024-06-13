@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, Inject, inject } from '@angular/core';
 import { ProfileService } from '../../data/services/profile.service';
 import { Profile } from '../../data/interfaces/profile.interface';
 import { ProfileCardComponent } from "../../common-ui/profile-card/profile-card.component";
@@ -11,11 +11,10 @@ import { ProfileCardComponent } from "../../common-ui/profile-card/profile-card.
     imports: [ProfileCardComponent]
 })
 export class SearchPageComponent {
-  profileService = inject(ProfileService);
   profiles: Profile[] = [];
 
-  constructor() {
-    this.profileService.getTestAccounts().subscribe(val => {
+  constructor(@Inject(ProfileService) profileService: ProfileService) {
+    profileService.getTestAccounts().subscribe(val => {
       this.profiles = val;
     });
   }
