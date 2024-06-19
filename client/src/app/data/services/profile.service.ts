@@ -1,22 +1,21 @@
-import { Injectable, inject } from '@angular/core';
+import { Inject, Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Profile } from '../interfaces/profile.interface';
+import {UrlHelperService} from "../services/urlHelper.service";
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProfileService {
-  http = inject(HttpClient);
-  baseApiUrl = 'https://icherniakov.ru/yt-course/';
-  // delete in the end
-  tmpVal = 0;
+  private http: HttpClient;
+  private urls: UrlHelperService
 
-  constructor() {
-    // delete in the end
-    this.tmpVal = 1;
-   }
+  constructor(@Inject(HttpClient) http: HttpClient, @Inject(UrlHelperService) urls: UrlHelperService) { 
+    this.http = http;
+    this.urls = urls;
+  }
 
   getTestAccounts() {
-    return this.http.get<Profile[]>(`${this.baseApiUrl}account/test_accounts`);
+    return this.http.get<Profile[]>(`${this.urls.getBaseUrl()}${this.urls.getAccountTestAccountsUrl()}`);
   }
 }
