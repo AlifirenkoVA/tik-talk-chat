@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class UrlHelperService {
   private baseApiUrl = 'https://icherniakov.ru/yt-course/';
@@ -12,11 +12,11 @@ export class UrlHelperService {
     return this.baseApiUrl;
   }
 
-  getAccountTestAccountsUrl(){
+  getAccountTestAccountsUrl() {
     return this.account_testAccount_Url;
   }
 
-  getAccountLoginUrl(){
+  getAccountLoginUrl() {
     return this.account_login_Url;
   }
 }

@@ -2,13 +2,10 @@ import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
   name: 'imgUrl',
-  standalone: true
+  standalone: true,
 })
 export class ImgUrlPipe implements PipeTransform {
-
   transform(value: string | null): string {
-    return value 
-    ? `https://icherniakov.ru/yt-course/${value}`
-    : '';
+    return value ? `https://icherniakov.ru/yt-course/${value}` : '';
   }
 }
