@@ -1,5 +1,5 @@
-import { Inject, Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Inject, Injectable } from '@angular/core';
 import { Profile } from '../interfaces/profile.interface';
 import { UrlHelperService } from '../services/urlHelper.service';
 
@@ -21,6 +21,12 @@ export class ProfileService {
   getTestAccounts() {
     return this.http.get<Profile[]>(
       `${this.urls.getBaseUrl()}${this.urls.getAccountTestAccountsUrl()}`,
+    );
+  }
+
+  getMe() {
+    return this.http.get<Profile>(
+      `${this.urls.getBaseUrl()}${this.urls.getMeUrl()}`,
     );
   }
 }
